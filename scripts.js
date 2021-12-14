@@ -1,10 +1,18 @@
 function compute() {
 
     let inputAmount = document.getElementById("principal").value;
+
+    if (inputAmount <= 0) {
+        alert("Dude!? Enter a positive Number!")
+        inputAmount.focus()
+    } 
+
     let slider = document.getElementById("rate").value;
 
     let numOfYears = document.getElementById("years").value;
-    let yearlyInterest = ((inputAmount * slider * numOfYears) / 100 + parseFloat(inputAmount));
+    let yearlyInterest = ((inputAmount * slider * numOfYears) / 100);
+
+    
     
     document.getElementById("amount").innerHTML = inputAmount;
     document.getElementById("rangeValue").innerHTML = slider;
